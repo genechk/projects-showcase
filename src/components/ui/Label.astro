@@ -1,0 +1,18 @@
+---
+export type Props = {
+  class?: string
+  variant?: 'left' | 'right'
+}
+
+const { class: className, variant } = Astro.props
+---
+
+<p
+  class:list={[
+    'font-bold',
+    variant === 'left' ? 'text-left' : 'text-right',
+    className,
+  ]}
+>
+  <slot />
+</p>

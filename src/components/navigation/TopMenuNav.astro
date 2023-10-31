@@ -1,0 +1,63 @@
+---
+import { Menu, MenuItem } from '../ui'
+
+export type MenuItemData = { href: string; label: string }
+export type Props = {
+  toggleId: string
+  title: string
+  menuItems: MenuItemData[] | readonly MenuItemData[]
+}
+
+const { menuItems, title, toggleId } = Astro.props
+---
+
+<nav class="navbar min-h-[3.25rem] bg-slate-200">
+  <div class="flex-none lg:hidden">
+    <!-- See https://daisyui.com/components/drawer/ -->
+    <label
+      for={toggleId}
+      aria-label="open sidebar"
+      class="btn btn-square btn-ghost text-slate-500 hover:text-accent"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="inline-block h-5 w-5 stroke-current"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path></svg
+      >
+    </label>
+  </div>
+
+  <div class="mx-2 flex-1 px-2">
+    <a
+      class="text-xl font-light text-slate-500 hover:text-accent lg:text-2xl"
+      href="/projects"
+    >
+      {title}
+    </a>
+  </div>
+  <div class="hidden flex-none lg:block">
+    <Menu
+      id="nav-menu"
+      class="focus:text-accent"
+      variant="horizontal"
+    >
+      {
+        menuItems.map(({ href, label }) => (
+          <MenuItem
+            class="text-slate-500 hover:text-accent"
+            href={href}
+          >
+            {label}
+          </MenuItem>
+        ))
+      }
+    </Menu>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+---
+import { title, subtitle } from '@content/_data'
+import { Badge } from '../ui'
+---
+
+<>
+  <h1>{title}</h1>
+  <h2>{subtitle}</h2>
+
+  <div class="mb-7 grid justify-start">
+    <div class="not-prose mt-7 flex select-none flex-row items-baseline gap-3">
+      <Badge variant="large">Front End</Badge>
+      <div class="text-2xl">&</div>
+      <Badge variant="large">Full Stack</Badge>
+    </div>
+  </div>
+</>

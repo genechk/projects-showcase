@@ -1,0 +1,41 @@
+---
+import { Menu, MenuItem } from '../ui'
+import type { MenuItemData } from './TopMenuNav.astro'
+
+export type Props = {
+  toggleId: string
+  menuItems: MenuItemData[] | readonly MenuItemData[]
+}
+
+const { toggleId, menuItems } = Astro.props
+---
+
+<aside class="drawer-side">
+  <label
+    for={toggleId}
+    aria-label="close sidebar"
+    class="drawer-overlay"
+  ></label>
+  <div
+    class="m-0 grid min-h-full w-80 grid-cols-12 content-start items-start bg-base-100 p-0"
+  >
+    <label
+      aria-label="close sidebar"
+      class="btn btn-square col-start-11 m-0 -translate-y-0.5 translate-x-0.5 border-transparent bg-transparent text-4xl font-light text-slate-500 hover:text-white"
+      for={toggleId}
+      ><span class="-translate-y-0.5 translate-x-0.5">×</span></label
+    >
+    <Menu variant="vertical">
+      {
+        menuItems.map(({ href, label }) => (
+          <MenuItem
+            class="text-slate-500"
+            href={href}
+          >
+            {label}
+          </MenuItem>
+        ))
+      }
+    </Menu>
+  </div>
+</aside>

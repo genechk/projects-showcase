@@ -1,0 +1,30 @@
+---
+import { SVGIcon } from '../ui'
+
+export type Props = {
+  href: string
+  src: string
+  title?: string
+}
+
+const { href, src, title } = Astro.props
+---
+
+<div
+  class="tooltip tooltip-bottom tooltip-primary"
+  data-tip={title}
+>
+  <div class="grid h-11 w-11 place-items-center overflow-hidden">
+    <a
+      aria-label={title}
+      class="grid rotate-45 place-items-center rounded-none bg-black/25 p-2.5 text-white backdrop-blur-md transition-colors duration-300 hover:bg-black/50"
+      href={href}
+      target="_blank"
+    >
+      <SVGIcon
+        class="-rotate-45"
+        src={src}
+      />
+    </a>
+  </div>
+</div>

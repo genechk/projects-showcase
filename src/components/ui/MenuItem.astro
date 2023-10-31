@@ -1,0 +1,18 @@
+---
+type Props = {
+  class?: string
+  href?: string
+  variant?: 'horizontal' | 'vertical'
+}
+
+const { class: className, href } = Astro.props
+---
+
+<li>
+  <a
+    class={className}
+    href={href}
+  >
+    <slot />
+  </a>
+</li>

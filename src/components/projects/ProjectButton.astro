@@ -1,0 +1,33 @@
+---
+export type Props = {
+  class?: string
+  download?: boolean
+  href: string
+  isPrimary: boolean
+  title?: string
+}
+
+const { class: className, download, href, isPrimary, title } = Astro.props
+---
+
+<div
+  class={!!title ? 'tooltip tooltip-primary tooltip-bottom' : undefined}
+  data-tip={title}
+>
+  <a
+    class:list={isPrimary
+      ? ['btn btn-primary rounded-none hover:btn-accent', className]
+      : [
+          'btn btn-outline',
+          'border-primary text-primary',
+          'rounded-none',
+          'hover:border-accent hover:bg-transparent hover:text-accent',
+          className,
+        ]}
+    download={download}
+    href={href}
+    target="_blank"
+  >
+    <slot />
+  </a>
+</div>

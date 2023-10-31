@@ -21,7 +21,20 @@ module.exports = {
       rules: {
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
+        'no-unused-vars': 'error',
       },
+    },
+    {
+      files: ['*.ts'],
+      parser: '@typescript-eslint/parser',
+      rules: {
+        'no-unused-vars': 'error',
+      },
+    },
+    {
+      ecmaVersion: '2015',
+      files: ['*.mjs'],
+      parserOptions: { sourceType: 'module' },
     },
   ],
 }

@@ -1,0 +1,25 @@
+---
+import { Label } from '../ui'
+import { contacts } from '@content/_data'
+---
+
+<section class="flex flex-col gap-3">
+  <h3>Contacts</h3>
+  <div class="grid grid-cols-[min-content_minmax(10rem,_1fr)] gap-x-3">
+    {
+      contacts.map(({ label, href, value }) => (
+        <>
+          <Label variant="left">{label}:</Label>
+          <div>
+            <a
+              href={href}
+              target="_blank"
+            >
+              {value}
+            </a>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+type Props = {
+  id?: string
+  class?: string
+  variant?: 'horizontal' | 'vertical'
+}
+
+const { class: className, id, variant } = Astro.props
+---
+
+<>
+  {
+    !variant || variant === 'horizontal' ? (
+      <ul
+        class:list={['menu menu-horizontal', className]}
+        id={id}
+      >
+        <slot />
+      </ul>
+    ) : (
+      <ul
+        class:list={['menu col-span-12 m-0 px-0 py-4 text-xl', className]}
+        id={id}
+      >
+        <slot />
+      </ul>
+    )
+  }
+</>

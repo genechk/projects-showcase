@@ -1,0 +1,21 @@
+---
+export type Props = {
+  class?: string
+  src: string
+  size?: 'xs' | 'small' | 'medium' | 'large' | 'xl'
+}
+
+const { class: className, size, src } = Astro.props
+const commonStyles = 'flex items-center justify-center'
+const sizes = {
+  xs: 'h-4 w-4',
+  small: 'h-5 w-5',
+  medium: 'h-6 w-6',
+  large: 'h-8 w-8',
+  xl: 'h-8 w-8',
+} as const
+---
+
+<div class:list={[sizes[size || 'medium'], commonStyles, className]}>
+  <Fragment set:html={src} />
+</div>

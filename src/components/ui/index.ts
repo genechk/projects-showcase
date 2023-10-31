@@ -1,0 +1,5 @@
+export { default as Badge } from './Badge.astro'
+export { default as Label } from './Label.astro'
+export { default as Menu } from './Menu.astro'
+export { default as MenuItem } from './MenuItem.astro'
+export { default as SVGIcon } from './SVGIcon.astro'

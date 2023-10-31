@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import { getProjectTimespan } from '@utils'
+import ProjectIconButton from './ProjectIconButton.astro'
+
+// Icons
+import codeIconSvg from '@assets/icons/code-bracket.svg?raw'
+import cubeIconSvg from '@assets/icons/cube.svg?raw'
+import linkIconSvg from '@assets/icons/link.svg?raw'
+
+export type Props = { project: CollectionEntry<'projects'> }
+const { project } = Astro.props
+const { slug } = project
+const {
+  demoURL,
+  githubURL,
+  image,
+  startDate,
+  endDate,
+  employerName,
+  productionURL,
+  title,
+} = project.data
+
+const timespan = getProjectTimespan({ startDate, endDate })
+---
+
+<article class="group relative w-full overflow-hidden">
+  <div
+    class="absolute right-2.5 top-2.5 z-10 flex items-center gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+  >
+    {
+      githubURL && (
+        <ProjectIconButton
+          href={githubURL}
+          src={codeIconSvg}
+          title="Github URL"
+        />
+      )
+    }
+
+    {
+      demoURL && (
+        <ProjectIconButton
+          href={demoURL}
+          src={cubeIconSvg}
+          title="Demo URL"
+        />
+      )
+    }
+
+    {
+      productionURL && (
+        <ProjectIconButton
+          href={productionURL}
+          src={linkIconSvg}
+          title="Production URL"
+        />
+      )
+    }
+  </div>
+  <a href={`/projects/${slug}`}>
+    <Image
+      alt={title}
+      class="m-0 h-auto w-full scale-100 transition duration-[1.5s] group-hover:scale-110"
+      loading="lazy"
+      src={image}
+    />
+    <div
+      class="absolute bottom-0 left-0 w-full bg-black/50 p-5 text-slate-100 backdrop-blur-sm transition duration-700 group-hover:translate-y-0"
+    >
+      <h3 class="mr-2 text-2xl font-light">{title}</h3>
+      <p class="mt-1 text-sm md:text-base">
+        For {employerName}
+      </p>
+      <p class="mt-2 whitespace-nowrap text-lg">
+        {timespan}
+      </p>
+    </div>
+  </a>
+</article>
