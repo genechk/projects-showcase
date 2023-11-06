@@ -1,5 +1,5 @@
 ---
-title: Apeals for Humanitarian Aid CRM
+title: Appeals for Humanitarian Aid CRM
 slug: dopomoha-kharkiv-crm
 image: '@assets/thumbnails/dopomoha-kharkiv-crm.png'
 description: CRM that helps to track appeals for humanitarian aid from citizens of areas affected by war
