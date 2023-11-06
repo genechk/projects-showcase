@@ -2,7 +2,7 @@ import { z, type ImageFunction } from 'astro:content'
 
 export const projectSchema = z.object({
   title: z.string(),
-  thumbnail: z.string(),
+  thumbnail: z.string().optional(),
   description: z.string(),
   employerName: z.string(),
   employerURL: z.string().optional(),
