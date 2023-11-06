@@ -1,0 +1,108 @@
+/*
+Theme Name: Dyad Child Theme for Stdo42
+Theme URI: https://wordpress.com/themes/dyad/
+Template: dyad
+Author: Genek
+Description: Изменения в переключении языков и других мелких, но важных деталях.
+Tags: blue,yellow,dark,responsive-layout,custom-colors,custom-header,custom-menu,editor-style,featured-images,rtl-language-support,sticky-post,threaded-comments,translation-ready,photoblogging
+Version: 1.0.10.1494930226
+Updated: 2017-05-16 10:23:46
+
+*/
+
+.posts .entry-title {
+    font-size: 2rem;
+    text-align: left;
+}
+.link-more {
+    visibility: hidden;
+}
+.entry-header h1.entry-title {
+    font-size: 3.6rem;
+    text-align: left;
+}
+.format-image .entry-content h2, .format-image .entry-content h3, .format-image .entry-header h1.entry-title {
+    text-align: center;
+}
+.page-translation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.page-translation li {
+    margin-right: 14px;
+    margin-top: 12px;
+    width: 20px;
+    display: inline-block;
+}
+.page-translation li a {
+    width: 20px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    padding: 5px 8px;
+}
+.page-translation li a:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+.page-translation li.current-lang a {
+    background-color: rgba(0,0,0,0.2);
+    cursor: default;
+    pointer-events: none;
+}
+.page-translation li.current-lang a:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+#post-280 .entry-inner, #post-287 .entry-inner, #post-1763 .entry-inner, .calendar .entry-inner {
+    max-width: 100% !important;
+    padding: 0 20px;
+}
+#post-280 .entry-inner .entry-header h1.entry-title, #post-287 .entry-inner .entry-header h1.entry-title, #post-1763 .entry-inner .entry-header h1.entry-title, .calendar .entry-inner .entry-header h1.entry-title {
+    text-align: center;
+}
+th h3 {
+    text-transform: none;
+}
+tr.simcal-week {
+    height: 10em;
+}
+.simcal-event-details a {
+    color:#3c7b93;
+}
+
+.simcal-event-details h6 {
+    text-transform: none;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+}
+
+.simcal-event-details h6, 
+.simcal-event-details div.simcal-events-description {
+    display: inline;
+}
+
+.simcal-event-details p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+@media only screen and (max-width: 1200px) {
+.posts .entry-title {
+    font-size: 2.5rem;
+}
+}
+
+@media only screen and (max-width: 960px) {
+.posts .entry-title {
+    font-size: 2rem;
+}
+}
+

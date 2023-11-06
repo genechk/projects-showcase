@@ -1,0 +1,70 @@
+/*
+Theme Name: Dyad Child Theme for Stdo42
+Theme URI: https://wordpress.com/themes/dyad/
+Template: dyad
+Author: Genek
+Description: Изменения в переключении языков и других мелких, но важных деталях.
+Tags: blue,yellow,dark,responsive-layout,custom-colors,custom-header,custom-menu,editor-style,featured-images,rtl-language-support,sticky-post,threaded-comments,translation-ready,photoblogging
+Version: 10.0.10.1494704210
+Updated: 2017-05-13 19:36:50
+
+*/
+
+
+/*
+Стили переключателя языков из header.php
+*/
+
+.page-translation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-translation li {
+    display: inline-block;
+    width: 20px;
+    margin-right: 14px;
+    margin-top: 12px;
+}
+
+.page-translation li a {
+    text-align: center;
+    width: 20px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.2);
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;;
+}
+
+.page-translation li a:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.page-translation li.current-lang a {
+    background-color: rgba(0,0,0,0.2);
+   pointer-events: none;
+   cursor: default;
+
+}
+
+.page-translation li.current-lang a:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+
+
+/*
+Улучшения внешнего вида ленты
+*/
+
+.posts .entry-title {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.entry-header h1.entry-title {
+    font-size: 3.6rem;
+    text-align: left;
+}
