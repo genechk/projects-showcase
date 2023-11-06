@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro'
+import {
+  Contacts as ContactsComponent,
+  ProjectsShowcase,
+  ProjectButton,
+  SVGIcon,
+} from '@components'
+import { cvDownload, cvDownloadName, cvOnline, title } from '@content/_data'
+
+// Images
+import clipIconSvg from '@assets/icons/paper-clip.svg?raw'
+import driveIconSvg from '@assets/icons/google-drive.svg?raw'
+import photo from '@assets/photos/genechk.jpg'
+---
+
+<Layout title={title}>
+  <div
+    class="flex flex-col items-center gap-2 bg-cover lg:grid lg:h-[calc(100vh-3.25rem)] lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:overflow-y-hidden"
+  >
+    <section
+      class:list={[
+        'prose prose-min prose-headings:mb-0 prose-headings:mt-2 prose-h1:mt-4 prose-p:m-0 prose-p:mb-3',
+        'prose-headings:leading-snug',
+        'md:prose-h1:mt-4.5 md:prose-lg md:gap-x-4 md:p-4',
+        'lg:flex-grow  lg:overflow-y-auto lg:overflow-x-hidden lg:px-8 lg:pb-10',
+      ]}
+    >
+      <ProjectsShowcase />
+      <ContactsComponent />
+      <div class="flex flex-row gap-3">
+        <ProjectButton
+          href={cvDownload}
+          isPrimary={true}
+          download={cvDownloadName}
+        >
+          <SVGIcon
+            size="small"
+            src={clipIconSvg}
+          />
+           Download CV
+        </ProjectButton>
+        <ProjectButton
+          href={cvOnline}
+          isPrimary={false}
+        >
+          <SVGIcon src={driveIconSvg} />
+           View CV on Google Drive
+        </ProjectButton>
+      </div>
+    </section>
+    <section class="hidden w-full overflow-hidden lg:flex lg:flex-1">
+      <picture
+        aria-label="Yours truly"
+        class="h-full w-full flex-1 bg-cover"
+        style={`background-image: url('${photo.src}')`}
+      ></picture>
+    </section>
+  </div>
+</Layout>
