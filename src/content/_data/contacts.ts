@@ -9,10 +9,15 @@ export const contacts = [
     href: 'tel:+380986774620',
     value: '+38 098 677-46-20',
   },
-  { label: 'Telegram', href: 'https://t.me/genechk', value: 'genechk' },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/genechk/',
+    value: 'Genek Tomashko',
+  },
+  { label: 'Telegram', href: 'https://t.me/genechk', value: '@genechk' },
   {
     label: 'Github',
     href: 'https://github.com/genechk',
-    value: 'github.com/genechk',
+    value: '@genechk',
   },
 ] as const
