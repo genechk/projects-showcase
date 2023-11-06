@@ -1,0 +1,108 @@
+.sidebar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: auto;
+    
+    @include transform(translateX(100%));
+    
+    padding: $grid__big-gutter * 10px / 2;
+    padding: $grid__big-gutter * 1rem / 2;
+    overflow: scroll;
+    overflow-x: hidden;
+    z-index: 9000;
+    
+    background-color: $color__background-drawer;
+    color: white;
+    opacity: 0;
+
+    // closing animation
+    @include transition-property(transform, width, opacity);
+    @include transition-duration(0.4s, 0.4s, 1.4s);
+    @include transition-timing-function(ease-out, ease-in, ease-out);
+    @include transition-delay(0.05s, 0.1s, 0.05s);
+
+    @include screenSize(phablet) {
+        width: $size__site-sidebar;
+        background: rgba($color__background-drawer,.95);
+    }
+
+    @include screenSize(desktop-hd) {
+        width: $size__site-sidebar-wide;
+    }
+
+    .sidebar-inner {
+        max-width: ms(20);
+        margin: 0 auto;
+        padding: 0 ($grid__big-gutter * 10px / 2);
+        padding: 0 ($grid__big-gutter * 1rem / 2);
+        opacity: 0;
+
+        // closing animation
+        @include transition(opacity,0.4s,ease-out);
+    }
+
+    &::-webkit-scrollbar {
+     display: none;
+    }
+    
+    ul, ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: $color__link-sidebar;
+        text-decoration: none;
+        &:hover {
+            color: $color__link-sidebar-hover;
+        }
+    }
+
+
+    h1, h2, h3 {
+        text-align: left;
+    }
+}
+
+.sidebar-toggled {
+    .sidebar {
+        @include transform(translateX(0%));
+        width: 100%;
+        opacity: 1;
+
+        // opening animation
+        @include transition-property(transform, opacity);
+        @include transition-duration(0.20s, 0.25s);
+        @include transition-timing-function(ease-out);
+
+        @include screenSize(tablet) {
+            width: $size__site-sidebar;
+
+            // opening animation for all media queries above tablet screen
+            @include transition-property(transform, width, opacity);
+            @include transition-duration(0.25s);
+            @include transition-timing-function(ease-out);
+            @include transition-delay(0s, 0.15s, 0s);
+        }
+
+        @include screenSize(desktop-hd) {
+            width: $size__site-sidebar-wide;
+        }
+
+    }
+    .sidebar-inner {
+        opacity: 1;
+        // // opening animation
+        @include transition(opacity,0.5s,ease-out,1.2s);
+    }
+}
+
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+@import "widgets";

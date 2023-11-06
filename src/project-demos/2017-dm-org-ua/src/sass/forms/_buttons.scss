@@ -1,0 +1,117 @@
+%button-clear {
+	color: $color__text-button;
+	border: none;
+	border-radius: 0;
+	background: none;
+	outline: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+%button-base {
+	color: $color__text-button;
+	border-style: solid;
+	border-width: 1px 1px 3px;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	outline: none;
+
+}
+
+
+%form-button {
+
+		@extend %heading-base;
+		@extend %button-base;
+
+		font-size: ms(3);
+		letter-spacing: ms(-14);
+		
+		padding: ms(0) ms(0);
+		margin: ms(0) ms(0) ms(0) 0;
+
+		@include transition(all 0.2s ease-in-out);
+		
+		&:hover {
+			background: $color__background-button-hover;
+			border-color: $color__border-button-hover;
+			color: $color__text-button-hover;
+			text-shadow: 0 1px 1px $color__textshadow-button-hover;
+			@include transition(all 0.15s ease-in-out);
+		}
+
+		&:active {
+			background: $color__background-button-focus;
+			border-color: $color__border-button-focus;
+			border-width: 3px 1px 1px;
+			outline: none;
+		}
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 1px 4px $color__outilne-button-focus;
+			@include transition(all 0.15s ease-in-out);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			&:hover, &:focus, &:active {
+
+				@extend %button-base;
+
+			}
+		}
+
+}
+
+
+%main-button {
+
+		@extend %heading-base;
+
+		color: $color__active;
+		border-style: solid;
+		border-width: 2px;
+		border-color: $color__active-tint20;
+		border-radius: 0;
+		background: none;
+		outline: none;
+
+		font-size: ms(3);
+		letter-spacing: ms(-14);
+		
+		padding: ms(0) ms(0);
+		margin: ms(0) ms(0) ms(0) 0;
+
+		@include transition(all 0.2s ease-in-out);
+		
+		&:hover {
+			border-color: $color__eyecandy-tint20;
+			color: $color__eyecandy;
+			@include transition(all 0.15s ease-in-out);
+		}
+
+		&:active, 
+		&:focus {
+			border-color: $color__eyecandy;
+			color: $color__eyecandy;
+		} 
+
+		&:disabled {
+			opacity: 0.5;
+			&:hover, &:focus, &:active {
+				border-color: $color__active-tint20;
+				color: $color__active;
+			}
+		}
+
+}
+
+form {
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		@extend %form-button;
+	}
+}

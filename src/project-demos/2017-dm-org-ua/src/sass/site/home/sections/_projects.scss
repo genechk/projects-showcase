@@ -1,0 +1,258 @@
+/* Slider styles */
+%sliders {
+	overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+
+.section-header h1 {
+    margin-left: -3px;
+    margin-bottom: 2.3rem;
+    @include screenSize(tablet) {
+        margin-left: 0;
+        margin-bottom: $grid__medium-gutter * 10px;
+        margin-bottom: $grid__medium-gutter * 1rem;
+    }
+
+    @include screenSize(desktop) {
+        margin-bottom: $grid__big-gutter * 10px;
+        margin-bottom: $grid__big-gutter * 1rem;
+    }
+}
+
+
+
+#projects-list {
+    background-color: none;
+
+	@include transition (all, 0.5s, ease);
+
+    @include screenSize(tablet) {
+	    background-color: #f3f3f5; // $color__base-tint90; // 
+		// background-image: repeating-linear-gradient(135deg, transparent, transparent 1px, rgba(255,255,255,1) 1px, rgba(255,255,255,1) 4px);
+    }
+
+	.project-nav {
+
+		position: relative;
+	    padding-top: 0;
+
+		@include transition (all, 0.5s, ease);
+		
+	    @include screenSize(tablet) {
+		    padding-top: $grid__medium-gutter * 10px;
+		    padding-top: $grid__medium-gutter * 1rem;
+	    }
+
+	    @include screenSize(desktop) {
+		    padding-top: $grid__big-gutter * 10px;
+		    padding-top: $grid__big-gutter * 1rem;	
+	    }
+	}
+
+	.nav-description {
+			margin: 12px 0 39px;
+			margin: ((($grid__small-gutter * 1rem) / 2) + 0.2rem) 0 (($grid__big-gutter * 1rem) - 0.1rem);
+
+		@include screenSize(tablet) {
+			margin: ((($grid__small-gutter * 10px) - 2px) / 2) 0 $grid__medium-gutter * 10px;
+			margin: ((($grid__small-gutter * 1rem) - 0.2rem) / 2) 0 $grid__medium-gutter * 1rem;
+		}
+
+	    @include screenSize(desktop) {
+		    margin: ((($grid__small-gutter * 10px) - 2px) / 2) 0 $grid__big-gutter * 10px;
+			margin: ((($grid__small-gutter * 1rem) - 0.2rem) / 2) 0 $grid__big-gutter * 1rem;
+	    }
+	}
+
+    .thumbnail {
+
+		@include transition (all, 0.5s, ease);
+	    width: 100%;
+		display: block;
+
+	    &:first-child {
+		    padding-top: 0;
+		}
+
+	    @include screenSize(tablet) {
+	        width: auto;
+
+	        &:first-child {
+			    padding-top:0;
+			}
+	    }
+    }
+
+	.nav-image {
+		opacity:1;
+		@include transition (all, 0.5s, ease);
+		display: block;
+		@extend %sliders;
+		height: 15rem;
+		
+	//    -moz-box-shadow: 1px 1px rgba($color__base, 0.15);
+	// -webkit-box-shadow: 1px 1px rgba($color__base, 0.15);
+		    box-shadow: 1px 1px rgba($color__base, 0.15);
+		// outline: 1px solid rgba(255,255,255,0);
+	}
+
+	.thumbnail:hover {
+		@include transition (all, 0.5s, ease);
+
+		.nav-image {
+			opacity:0.8;
+			@include transition (all, 0.5s, ease);
+
+		//    -moz-box-shadow: 1px 1px 3px rgba($color__base, 0.35);
+		// -webkit-box-shadow: 1px 1px 3px rgba($color__base, 0.35);
+				box-shadow: 1px 1px 3px rgba($color__base, 0.35);
+
+			// outline: 5px solid rgba(255,255,255,0.4);
+			// outline-offset: -4px;
+		}
+	}
+
+}
+
+
+/* Responsive slider behavior */
+
+#projects-detailed {
+    display:none;
+    visibility:hidden;
+    background-color: white;
+
+    @include screenSize(tablet) {
+    	display:block;
+        visibility:visible;
+    }
+}
+
+$project-small-height: 37.5;
+$project-big-height: 45;
+
+
+.project-slider {
+	position: relative;
+	.project-image {
+		@extend %sliders;
+	    height: $project-small-height * 10px;
+	    height: $project-small-height * 1rem;
+
+	    @media (min-height: 620px) and (min-width: $desktop) {
+		    height: $project-big-height * 10px;
+		    height: $project-big-height * 1rem;
+	    }
+	}
+
+	.project-description {
+	    padding:	(($grid__medium-gutter - 0.5) * 10px)
+	    			($grid__medium-gutter * 10px)
+	    			10px
+	    			($grid__medium-gutter * 10px);
+	    padding:	(($grid__medium-gutter - 0.5) * 1rem)
+	    			($grid__medium-gutter * 1rem)
+	    			1rem
+	    			($grid__medium-gutter * 1rem);
+
+	    overflow: hidden;
+
+	    @include screenSize(tablet) {
+
+		    height: ($project-small-height - $grid__medium-gutter - 0.2) * 10px;
+		    height: ($project-small-height - $grid__medium-gutter - 0.2) * 1rem;
+			
+		    max-height: ($project-small-height - $grid__medium-gutter - 0.2) * 10px;
+		    max-height: ($project-small-height - $grid__medium-gutter - 0.2) * 1rem;
+	    }
+
+		@include screenSize(desktop) {
+		    padding:	(($grid__big-gutter - 0.8) * 10px)
+		    			($grid__big-gutter * 10px)
+		    			($grid__small-gutter * 10px / 2)
+		    			($grid__big-gutter * 10px);
+		    padding:	(($grid__big-gutter - 0.8) * 1rem)
+		    			($grid__big-gutter * 1rem)
+		    			($grid__small-gutter * 1rem / 2)
+		    			($grid__big-gutter * 1rem);
+		}
+
+
+	    @media (min-height: 620px) and (min-width: $desktop) {
+			
+		    height: ($project-big-height - $grid__big-gutter + 1) * 10px;
+		    height: ($project-big-height - $grid__big-gutter + 1) * 1rem;
+
+		    max-height: ($project-big-height - $grid__big-gutter + 1) * 10px;
+		    max-height: ($project-big-height - $grid__big-gutter + 1) * 1rem;
+		}
+
+
+	    h3 {
+	    	margin-bottom: 11px;
+	    	margin-bottom: 1.1rem;
+	    	line-height: (30px / 24px);
+	    }
+
+	    p {
+	    	margin-top: 0;
+	    	// line-height: (25px / 16px);
+	    }
+
+
+
+		.project-button {
+			@extend %main-button;
+			display: inline-block;
+			position: absolute;
+			bottom:0;
+			margin-bottom:0;
+
+			@include screenSize(desktop) {
+				margin-top: $grid__medium-gutter * 10px / 2;
+				margin-top: $grid__medium-gutter * 1rem / 2;
+
+		    	margin-bottom: ($grid__small-gutter * 10px / 2);
+		    	margin-bottom: ($grid__small-gutter * 1rem / 2);
+			}
+		}
+
+	}
+}
+
+
+.project-description {
+
+	position: relative;
+
+	p.too-long:before {
+	    height: 100px;
+	    height: 10rem;
+	    left: 0;
+	    position: absolute;
+	    width: 100%;
+	    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,0)),color-stop(50%,rgba(255,255,255,1)),color-stop(100%,rgba(255,255,255,1)));
+	    background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+	    background: -o-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+	    background: -ms-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+	    background: linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+	    bottom: 0;
+	    content: "";
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#ffffff',GradientType=0);
+
+	}
+}
+
+
+/* Chrome hacks */
+.projects {
+	article, header, div, article a:focus, article a:active, div a:focus, div a:active {
+	    outline: 0;
+	}
+}
+
+
+@import "slick";

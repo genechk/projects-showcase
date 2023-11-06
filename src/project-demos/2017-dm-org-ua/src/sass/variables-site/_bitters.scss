@@ -1,0 +1,35 @@
+// Typography
+// $base-font-family: $font-stack-system;
+// $heading-font-family: $base-font-family;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 0;
+$base-spacing: $base-line-height * 1rem;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Font Colors
+$base-font-color: $color__subtle;
+
+// Border
+$base-border-color: $color__subtle-tint60;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: $color__subtle-tint90;
+
+// Focus
+$focus-outline-color: rgba($color__active, 0.4);
+$focus-outline-width: 3px;
+// $focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline: none;
+$focus-outline-offset: 0;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

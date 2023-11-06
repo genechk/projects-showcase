@@ -1,0 +1,35 @@
+.widget {
+
+
+    // min-width: ($site__min-width - $grid__big-gutter * 2) * 1rem;
+	margin: 0;
+    padding: ($grid__small-gutter * 10px / 2) 0;
+    padding: ($grid__small-gutter * 1rem / 2) 0;
+    color: $color__text-sidebar;
+    text-shadow: 0 1px 2px $color__text-shadow-sidebar;
+
+	/* Make sure select elements fit in widgets. */
+	select, input {
+		max-width: 100%;
+	}
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    &:first-child {    
+        padding-top: ($grid__small-gutter * 10px);
+        padding-top: ($grid__small-gutter * 1rem);
+    }
+}
+
+/* Search widget. */
+.widget_search {
+    .search-field {
+        width: 100%;
+    }
+    .search-submit {
+	   display: none;
+    }
+}

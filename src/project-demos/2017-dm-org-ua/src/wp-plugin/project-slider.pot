@@ -1,0 +1,15 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: W3 Total Cache\n"
+"POT-Creation-Date: 2017-06-25 23:08+0200\n"
+"PO-Revision-Date: 2017-06-25 23:08+200\n"
+"Last-Translator: \n"
+"Language-Team: W3 EDGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+#: project-slider.php:211
+msgid "partner logo"
+msgstr ""

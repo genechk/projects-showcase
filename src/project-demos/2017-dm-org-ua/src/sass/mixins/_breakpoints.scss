@@ -1,0 +1,84 @@
+// Breakpoints for each query
+$narrowest: 400px;
+
+$narrow: 550px;
+$medium: 750px;
+$wide: 1000px;
+$extra-wide: 1200px;
+$ultra-wide: 1600px;
+
+
+$tamagochi: 320px;
+$mobile: 400px;
+$phablet: 550px;
+$tablet: 750px;
+$desktop: 1000px;
+$desktop-hd: 1200px;
+$desktop-xd: 1440px;
+$desktop-ultra: 1600px;
+
+@mixin screenSize($media) {
+
+  @if $media == upto-narrow {
+    @media (max-width: $narrow) { @content; }
+  }
+
+  @else if $media == upto-medium {
+    @media (max-width: $medium) { @content; }
+  }
+  @else if $media == atleast-medium {
+    @media (min-width: $medium) { @content; }
+  }
+
+  @else if $media == upto-wide {
+    @media (max-width: $wide) { @content; }
+  }
+  @else if $media == atleast-wide {
+    @media (min-width: $wide) { @content; }
+  }
+
+  @else if $media == atleast-extra-wide {
+    @media (min-width: $extra-wide) { @content; }
+  }
+
+  @else if $media == atleast-ultra-wide {
+    @media (min-width: $ultra-wide) { @content; }
+  }
+
+
+
+  @else if $media == tamagochi {
+    @media (min-width: $tamagochi) { @content; }
+  }
+
+  @else if $media == mobile {
+    @media (min-width: $mobile) { @content; }
+  }
+
+  @else if $media == phablet {
+    @media (min-width: $phablet) { @content; }
+  }
+
+  @else if $media == tablet {
+    @media (min-width: $tablet) { @content; }
+  }
+
+  @else if $media == desktop {
+    @media (min-width: $desktop) { @content; }
+  }
+
+  @else if $media == desktop-hd {
+    @media (min-width: $desktop-hd) { @content; }
+  }
+
+  @else if $media == desktop-xd {
+    @media (min-width: $desktop-xd) { @content; }
+  }
+
+  @else if $media == desktop-ultra {
+    @media (min-width: $desktop-ultra) { @content; }
+  }
+
+
+
+}

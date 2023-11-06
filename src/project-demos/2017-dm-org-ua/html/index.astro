@@ -1,0 +1,545 @@
+---
+import './css/style.css'
+import '../../../images.d.ts'
+
+// Images
+import { Image } from 'astro:assets'
+
+import logo from './images/dm-logo.svg'
+import favicon from './images/favicon.png'
+import vinil from './images/vinil.jpg'
+import lection from './images/lection.jpg'
+import oneStreetDay from './images/onestreet-day.jpg'
+import historyNightBig from './images/history-night-1250x500.jpg'
+import historyNightSmall from './images/history-night-700x280.jpg'
+import stdo42 from './images/stdo42.png'
+
+// Logos
+import logo01 from './images/logos/01.png'
+import logo02 from './images/logos/02.png'
+import logo03 from './images/logos/03.png'
+import logo04 from './images/logos/04.png'
+import logo05 from './images/logos/05.png'
+import logo06 from './images/logos/06.png'
+import logo07 from './images/logos/07.png'
+import logo08 from './images/logos/08.png'
+import logo09 from './images/logos/09.png'
+import logo10 from './images/logos/09.png'
+import logo24 from './images/logos/24.png'
+---
+
+<head>
+  <!-- Basic Page Needs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8" />
+  <title>Громадське об&rsquo;єднання &laquo;День Музики&raquo;</title>
+  <meta
+    name="description"
+    content=""
+  />
+
+  <!-- Mobile Specific Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <!-- FONT
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Scada&subset=cyrillic"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link
+    rel="icon"
+    type="image/png"
+    href={favicon}
+  />
+
+  <!-- Scripts
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script
+    type="text/javascript"
+    src="http://code.jquery.com/jquery-1.11.0.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"
+  ></script>
+</head>
+
+<body class="scrollable page-template-custom-homepage">
+  <!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <header
+    id="masthead"
+    class="u-full-width header site-header hero"
+    role="banner"
+  >
+    <div class="identics site-branding">
+      <Image
+        id="logo"
+        src={logo}
+        alt=""
+      />
+      <h1>День музики</h1>
+      <h2 class="site-description">незалежне громадське об’єднання</h2>
+    </div>
+
+    <nav
+      id="site-navigation"
+      class="header-navigation"
+      role="navigation"
+    >
+      <div class="menu-header-container"></div>
+      <button
+        class="sidebar-toggle"
+        aria-controls="sidebar"
+        aria-expanded="false"
+      >
+        <span class="sidebar-toggle-icon">Бічна панель</span>
+      </button>
+    </nav>
+    <!-- #site-navigation -->
+
+    <div class="scroll-to-content">
+      <a href="#projects">
+        <svg
+          version="1.1"
+          id="arrow-down"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 38.1 44"
+          style="enable-background: new 0 0 38.1 44"
+          xml:space="preserve"
+        >
+          <style type="text/css">
+            .arrow-triangle {
+              opacity: 0.3;
+              fill: #ffffff;
+            }
+            .arrow-base {
+              opacity: 0.3;
+              fill: #ffffff;
+            }
+          </style>
+          <path
+            class="arrow-triangle"
+            d="	
+							M5.6,2.1h27.3L19.2,15.7L5.6,2.1z
+							M0.3,0l1.8,1.8l17,16.8l1.6-1.5L36.3,1.8L38.1,0
+							H0.3z"
+          ></path>
+          <path
+            class="arrow-base"
+            d="M0,21.9V32h37.8l0-2.1H0z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <section class="site-header-image"></section>
+
+  <main class="site-main">
+    <section
+      id="projects"
+      class="u-full-width projects"
+    >
+      <header class="section-header container">
+        <h1>Наші проекти</h1>
+      </header>
+      <div
+        id="projects-detailed"
+        class="u-full-width projects"
+      >
+        <div class="slider project-slider container">
+          <article class="project row">
+            <picture
+              class="six columns project-image"
+              onclick=""
+              style={`background-image: url('${vinil.src}')`}
+            >
+            </picture>
+            <header class="six columns project-description">
+              <h3>День музики (2014–2016)</h3>
+              <p class="too-long">
+                Міжнародний фестиваль <i>Fête de la Musique</i> проходить
+                щорічно у понад 700 містах по всій планеті. Харків приєднався до
+                руху в 2014 році. З тих пір «День музики» об'єднує десятки
+                майданчиків, на яких можна почути найкращих харківських
+                виконавців і лекції на музичні теми, взяти участь в джемах і
+                повчитися танцювати.
+              </p>
+              <a class="project-button">Сторінка Дня музики</a>
+            </header>
+          </article>
+
+          <article class="project row">
+            <picture
+              class="six columns project-image"
+              style={`background-image: url('${oneStreetDay.src}')`}
+            >
+            </picture>
+            <header class="six columns project-description">
+              <h3>День однієї вулиці (2015 та 2016)</h3>
+              <p>
+                Освітньо-розважальний проект стартував у 2015 році. Він об'єднує
+                історію міста, культуру і творчість, «подорожуючи» харківськими
+                вулицями. «День однієї вулиці» — це екскурсії, ярмарки, лекції
+                та презентації, майстер-класи та концерти, благодійні акції,
+                знайомство з людьми, які пишуть історію міста зараз.
+              </p>
+            </header>
+          </article>
+
+          <article class="project row">
+            <picture
+              class="six columns project-image"
+              style={`background-image: url('${historyNightBig.src}')`}
+            >
+            </picture>
+            <header class="six columns project-description">
+              <h3>Ніч історії Харкова</h3>
+              <p>
+                Мета проекту — популяризація реальної історії міста. Для цього
+                організовуються лекторії, які починаються пізно ввечері та
+                тривають до ранку. Запрошені лектори-дослідники різних напрямів
+                протягом восьми годин відкривають слухачам маловідомі факти та
+                подробиці давно минулих подій.
+              </p>
+            </header>
+          </article>
+
+          <article class="project row">
+            <picture
+              class="six columns project-image"
+              style={`background-image: url('${stdo42.src}')`}
+            >
+            </picture>
+            <header class="six columns project-description">
+              <h3>Студія 42</h3>
+              <p>
+                Студія була створена як місце для роботи, навчання, відпочинку і
+                творчості, де знаходяться однодумці та найсміливіші ідеї
+                перетворюються на успішні проекти. У хабі підтримують людей, які
+                розбудовують суспільне майбутнє своїми руками.
+              </p>
+            </header>
+          </article>
+
+          <article class="project row">
+            <picture
+              class="six columns project-image"
+              style={`background-image: url('${lection.src}')`}
+            >
+            </picture>
+            <header class="six columns project-description">
+              <h3>Навчання</h3>
+              <p>
+                Робота з численими громадськими ініціативами підштовхнула до
+                створення освітніх проектів. Ми проводимо школи, майстер-класи,
+                тренінги та курси, що допомагають третьому сектору ефективніше
+                діяти в непростих українських умовах.
+              </p>
+            </header>
+          </article>
+        </div>
+      </div>
+
+      <div
+        id="projects-list"
+        class="u-full-width projects"
+      >
+        <div class="slider project-nav container">
+          <a
+            class="project thumbnail four columns"
+            href="#"
+          >
+            <picture
+              class="nav-image"
+              style={`background-image: url('${vinil.src}')`}
+            >
+            </picture>
+            <p class="nav-description">День музики (2014–2016)</p>
+          </a>
+
+          <a
+            class="project thumbnail four columns"
+            href="#"
+          >
+            <picture
+              class="nav-image"
+              style={`background-image: url('${oneStreetDay.src}')`}
+            >
+            </picture>
+            <p class="nav-description">День однієї вулиці (2016)</p>
+          </a>
+          <a
+            class="project thumbnail four columns"
+            href="#"
+          >
+            <picture
+              class="nav-image"
+              style={`background-image: url('${historyNightSmall.src}')`}
+            >
+            </picture>
+            <p class="nav-description">Ніч історії Харкова</p>
+          </a>
+
+          <a
+            class="project thumbnail four columns"
+            href="#"
+          >
+            <picture
+              class="nav-image"
+              style={`background-image: url('${stdo42.src}')`}
+            >
+            </picture>
+            <p class="nav-description">Студія 42</p>
+          </a>
+
+          <a
+            class="project thumbnail four columns"
+            href="#"
+          >
+            <picture
+              class="nav-image"
+              style={`background-image: url('${lection.src}')`}
+            >
+            </picture>
+            <p class="nav-description">Навчання</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="partners"
+      class="u-full-width partners"
+    >
+      <div class="section-header container">
+        <h1>Партнери</h1>
+      </div>
+      <div class="partners container">
+        <div class="row featured">
+          <div class="three columns partner">
+            <a href="https://www.democracyendowment.eu/en/job-offers/">
+              <Image
+                src={logo07}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">EED</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="">
+              <Image
+                src={logo24}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">USAID</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="http://lyuk.media">
+              <Image
+                src={logo01}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">ЛЮК</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="http://fri.com.ua/oseredky-fri/harkivska-fri/">
+              <Image
+                src={logo03}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">ФРІ.Харків</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="three columns partner">
+            <a href="https://www.facebook.com/groups/441117112617365/">
+              <Image
+                src={logo06}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Тиждень жіночої солідарності</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="https://www.facebook.com/sela.bruk/">
+              <Image
+                src={logo02}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Я і Села Брук</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="http://filarmonia.kh.ua/">
+              <Image
+                src={logo09}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Харківська обласна філармонія</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="https://www.facebook.com/15x4kh/">
+              <Image
+                src={logo01}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">15 × 4</p>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="three columns partner">
+            <a href="http://www.irf.ua/">
+              <Image
+                src={logo10}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Східне представництво МФВ</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="http://elsakharkiv.org.ua/uk/golovna">
+              <Image
+                src={logo08}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">ELSA.Харків</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="https://www.facebook.com/CNTACTUkraine/">
+              <Image
+                src={logo05}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Датсько-український проект C:NTACT</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="https://www.facebook.com/crg.org.ua/">
+              <Image
+                src={logo03}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Центр Розвитку Громад</p>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="three columns partner">
+            <a href="http://1986.org.ua/uk">
+              <Image
+                src={logo02}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Чорнобильська історична майстерня</p>
+            </a>
+          </div>
+          <div class="three columns partner">
+            <a href="https://www.facebook.com/events/1238658739555797/">
+              <Image
+                src={logo04}
+                alt=""
+                class="partner-logo"
+              />
+              <p class="partner-caption">Різдвяний Трамвай</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer u-full-width">
+    <div class="site-info container">
+      <p>© ГО «День Музики, 2016</p>
+    </div>
+  </footer>
+
+  <div
+    id="sidebar"
+    class="sidebar"
+  >
+    <div
+      id="sidebar-inner"
+      class="sidebar-inner"
+    >
+      <div
+        id="secondary"
+        class="widget-area"
+        role="complementary"
+      >
+        <aside
+          id="text-3"
+          class="widget widget_text"
+        >
+          <h2 class="widget-title">Про ГО «День музики»</h2>
+          <div class="textwidget">
+            <p>
+              Ми — українська неурядова організація, що творить зміни на межі
+              культури, освіти, історії та громадського активізму.
+            </p>
+          </div>
+        </aside>
+        <aside
+          id="text-2"
+          class="widget widget_text"
+        >
+          <h2 class="widget-title">Пишіть або телефонуйте:</h2>
+          <div class="textwidget">
+            <p><a href="mailto:info@stdo42.com">info@stdo42.com</a></p>
+            <p>
+              +380 98 118-22-42<br />
+               +380 99 558-27-42
+            </p>
+          </div>
+        </aside>
+      </div>
+      <!-- .widget-area -->
+    </div>
+  </div>
+  <!-- .sidebar -->
+
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+  ></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/scripts.js"></script>
+  <script></script>
+
+  <!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>

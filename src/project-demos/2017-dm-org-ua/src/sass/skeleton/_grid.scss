@@ -1,0 +1,159 @@
+
+$grid__small-gutter: 2;
+$grid__medium-gutter: 3;
+$grid__big-gutter: 4;
+
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: $desktop-xd;
+  margin: 0 auto;
+  padding: 0 $grid__small-gutter * 10px;
+  padding: 0 $grid__small-gutter * 1rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /* For devices larger than tablet / 750px */
+  @include screenSize(tablet) {
+    padding: 0 $grid__big-gutter * 10px;
+    padding: 0 $grid__big-gutter * 1rem;
+  }
+
+}
+
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+
+
+  @include screenSize(tablet) {
+    padding-right: $grid__medium-gutter * 10px / 2;
+    padding-right: $grid__medium-gutter * 1rem / 2;
+
+    & + & {
+      padding-left: $grid__medium-gutter * 10px / 2;
+      padding-left: $grid__medium-gutter * 1rem / 2;
+    }
+  }
+
+  @include screenSize(desktop) {
+    padding-right: $grid__big-gutter * 10px / 2;
+    padding-right: $grid__big-gutter * 1rem / 2;
+
+    & + & {
+      padding-left: $grid__big-gutter * 10px / 2;
+      padding-left: $grid__big-gutter * 1rem / 2;
+    }
+  }
+
+}
+
+
+/* For devices larger than phablet / 550px */
+@include screenSize(phablet) {
+
+  .column:last-child,
+  .columns:last-child {
+    margin-right: 0; 
+    padding-right: 0; }
+
+  .one.column,
+  .one.columns                    { width: 1 / 12 * 100%; }
+  .two.columns                    { width: 2 / 12 * 100%; }
+  .three.columns                  { width: 3 / 12 * 100%; }
+  .four.columns                   { width: 4 / 12 * 100%; }
+  .five.columns                   { width: 5 / 12 * 100%; }
+  .six.columns                    { width: 6 / 12 * 100%; }
+  .seven.columns                  { width: 7 / 12 * 100%; }
+  .eight.columns                  { width: 8 / 12 * 100%; }
+  .nine.columns                   { width: 9 / 12 * 100%; ;          }
+  .ten.columns                    { width: 10 / 12 * 100%; }
+  .eleven.columns                 { width: 11 / 12 * 100%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 1 / 3 * 100%; padding: 0; }
+  .two-thirds.column              { width: 2 / 3 * 100%; padding: 0; }
+
+  .one-half.column                { width: 50%; padding: 0; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 1 / 12 * 100%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 2 / 12 * 100%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 3 / 12 * 100%; }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 4 / 12 * 100%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 5 / 12 * 100%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 6 / 12 * 100%; }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 7 / 12 * 100%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 8 / 12 * 100%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 9 / 12 * 100%; }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 10 / 12 * 100%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 11 / 12 * 100%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 1 / 3 * 100%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 2 / 3 * 100%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 50%; }
+
+}
+
+
+
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+
+
+
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+
+
+

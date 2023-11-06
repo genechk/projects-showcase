@@ -1,0 +1,139 @@
+/*
+Theme Name: Magnus Child
+Theme URI: http://underscores.me/
+Template: magnus
+Author: Genechk
+Author URI: http://behance.net/genechk
+Description: Life is Grand, Show it! Magnus is a photoblogging WordPress theme named after the latin word for Grand. It was made to showcase photos in a big and bold way, making the featured image on each post span the full width of the browser window, paired up with beautiful typography and a carefully planned layout.
+Tags: photoblogging,custom-header,custom-menu,featured-images,featured-image-header,threaded-comments,translation-ready,responsive-layout,one-column
+Version: 2.4.1497094336
+Updated: 2017-06-10 14:32:16
+*/
+
+
+/*!
+Theme Name: Dm-Kharkiv
+Theme URI: http://underscores.me/
+Author: Genek Tomashko
+Author URI: http://behance.net/genechk
+Description: Theme created for Kharkiv-based NGO “День Музики”
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: dm
+Tags: NGO, onepage
+
+Custom theme for dm.org.ua by Genechk.
+
+Dm-Kharkiv is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Theme was initially created as a Child Theme to Magnus WordPress Theme, (C) by Hugo Baeta.
+Parent theme URI: Theme URI: http://thefivethemes.com/themes/magnus
+A lot of Magnus styles are still reused.
+
+Main grid is based on Skeleton.css by Dave Gamache
+http://getskeleton.com/
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+// Libraries
+@import "bourbon";
+@import "libs/modular-scale/modular-scale";
+
+
+
+// Global
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "animations/animations";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "skeleton/skeleton";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+@import "site/sidebar/sidebar";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";

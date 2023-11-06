@@ -1,0 +1,102 @@
+.language-switch {
+
+	z-index: 1;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding-top: 20px;
+	padding-top: 2rem;
+
+	display: none;
+
+	// @include screenSize(tablet) {
+	// 	display: block;
+	// }
+
+	li {
+		// float: left;
+		margin-right: 5px;
+		margin-right: 0.5rem;
+	    // width: 20px;
+	    // width: 2rem;
+	    display: inline-block;
+
+		a {
+			padding: 6px 8px;
+			padding: 0.6rem 0.8rem;
+			display: block;
+			background-color: rgba(white,0.1);
+			text-align: center;
+		    width: 4rem;
+		    border-radius:20px;
+		    border-radius:2rem;
+
+		    &:hover {
+			    background-color: rgba(white,0.2);
+			}
+		}
+
+		&.current-lang a {
+		    background-color: rgba(white,0.2);
+		    cursor: default;
+		    pointer-events: none;
+
+		    &:hover {
+			    background-color: rgba(white,0.2);
+			}
+		}
+	}
+
+}
+
+
+.sidebar {
+
+	
+    // .widget_polylang + .widget {
+    //     margin-top: 0;
+    //     @include screenSize(tablet) {
+    //         margin-top: ($grid__small-gutter * 10px);
+    //         margin-top: ($grid__small-gutter * 1rem);
+    //     }
+    // }
+
+	.widget_polylang, .widget_polylang:first-child {
+		margin-left: -1.1rem;
+		.admin-bar & { 
+			margin-top: 32px;
+			margin-top: 3.2rem;
+		}
+		
+		padding-bottom: 0;
+		// padding-top: 0;
+
+		// @include screenSize(tablet) {
+		// 	visibility:hidden;
+		// 	display: none;
+		// }
+
+		a {
+			padding: 6px 8px;
+			padding: 0.6rem 1.4rem;
+			display: inline;
+			background-color: rgba(white,0.6);
+		    border-radius:20px;
+		    border-radius:2rem;
+
+			img {
+				margin-right: 3px;
+				margin-right: 0.3rem;
+				opacity:1;
+			}
+
+		    &:hover {
+			    background-color: rgba(white,0.8);
+
+			    img {
+			    	opacity: 0.8;
+			    }
+			}
+		}
+	}
+}

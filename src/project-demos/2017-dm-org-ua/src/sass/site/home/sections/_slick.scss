@@ -1,0 +1,247 @@
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+
+
+/* Arrows */
+.slick-prev,
+.slick-next 
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    outline: none;
+    background: transparent;
+
+    opacity: 1;
+
+
+    border: solid #b9b9bf;
+    border-radius: 0;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    &:focus {
+        color: transparent;
+        outline: none;
+        background: transparent;
+        border-color: #b9b9bf;
+    }
+
+    &:hover {
+        border-color: #eb6e78;
+    }
+
+    a:visited & {
+        border-color: #b9b9bf;
+    }
+    &.slick-disabled {
+        opacity: .25;
+    }
+
+}
+
+.slick-prev
+{
+    left: 20px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.slick-next
+{
+    right: 20px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+
+
+/* Dots styles */
+
+.slick-dots
+{
+    position: relative;
+    bottom: 2px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+    li {
+        position: relative;
+
+        display: inline-block;
+
+        width: 20px;
+        height: 20px;
+        margin: 0 4px;
+        padding: 16px;
+        text-align: center;
+
+        cursor: pointer;
+
+        button {
+            font-size: 0;
+            line-height: 0;
+
+            display: block;
+
+            position: absolute;
+            top: 50%;
+
+            width: 6px;
+            height: 6px;
+            padding: 0px;
+            margin: auto;
+
+            cursor: pointer;
+
+            color: transparent;
+            border: 0;
+            outline: none;
+            background-color: #b9b9bf;
+
+            opacity: 1;
+
+            border-radius: 4px;
+            opacity: .25;
+        }
+
+
+        &:hover button,
+        & button:hover,
+        & button:focus {
+            outline: none;
+            opacity: 1;
+        }
+
+
+        &.slick-active button {
+            opacity: .75;
+            background-color: #b9b9bf;
+        }
+
+
+
+    }
+}

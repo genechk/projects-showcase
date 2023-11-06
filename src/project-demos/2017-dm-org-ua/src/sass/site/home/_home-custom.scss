@@ -1,0 +1,85 @@
+.page-template-custom-homepage {
+
+	h1 {
+		color: $color__subtle_tint10;
+	}
+
+	h1, h2 {
+		text-align: left;
+
+		@media (min-height: $tamagochi) and (min-width: $phablet) {
+			text-align: center;
+			@include transition(all, 0.5s ease);
+		}
+	}
+
+	#masthead, section, footer {
+	    position: relative;
+	    overflow: hidden;
+	}
+
+    #masthead, .site-header-image {
+	    padding: 0;
+	    height: auto;
+	    min-height: $size__header-hero-min-height-mobile * 10px;
+	    min-height: $size__header-hero-min-height-mobile * 1rem;
+	}
+
+	.site-header-image {
+		position: absolute;
+	}
+
+	section {
+	    padding-top: $grid__medium-gutter * 10px;
+	    padding-top: $grid__medium-gutter * 1rem;
+	    min-height: $size__main-section-min-height-mobile * 10px;
+	    min-height: $size__main-section-min-height-mobile * 1rem;
+	}
+
+
+	@media (min-height: $tamagochi) and (min-width: $phablet) {
+		#masthead, .site-header-image {
+		    min-height: $size__header-hero-min-height-phablet * 10px;
+		    min-height: $size__header-hero-min-height-phablet * 1rem;
+	        min-height:100vh;
+	    }
+
+	    section {
+		    min-height: 0px + $size__main-section-min-height-phablet;
+		    min-height: 0rem + $size__main-section-min-height-phablet;
+
+	    }
+	}
+
+	@include screenSize(desktop) {
+		section {
+		    padding-top: $grid__big-gutter * 10px;
+		    padding-top: $grid__big-gutter * 1rem;
+		}
+	}
+
+	h1, h3 {
+	    	margin-top: 0;
+	    }
+
+
+	.site {
+	    // position:static;
+	    min-height: 100%;
+	    
+	    padding-bottom:0;
+	 }
+
+
+	.site-footer {
+
+	    position: relative;
+	    // left:0; right:0; bottom: 0;
+	}
+
+}
+
+
+	@import "sections/hero";
+	@import "sections/projects";
+	@import "sections/partners";

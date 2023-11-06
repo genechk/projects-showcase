@@ -1,0 +1,15 @@
+$modularscale: (
+  base: 1rem 1.6rem,
+  ratio: $fifth
+);
+
+
+$font__main: "Open Sans", "OpenSans", sans-serif;
+
+
+$font__headings: "Scada", sans-serif;
+
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: $ms-ratio;
+$font__line-height-pre: ms(3);

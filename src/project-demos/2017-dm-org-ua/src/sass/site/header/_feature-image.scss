@@ -1,0 +1,78 @@
+%site-header-section {
+    top:0;
+    left:0;
+    height: $size__header-height-mobile * 10px;
+    height: $size__header-height-mobile * 1rem;
+
+    @include screenSize(tablet){
+        height: $size__header-height-tablet * 100%;
+        height: $size__header-height-tablet * 100vh;
+    }
+
+    .featured-image & {
+        @include screenSize(desktop) {
+            height: 40vh;
+        }
+    }
+
+}
+
+#masthead {
+    @extend %site-header-section;
+    position: relative;
+}
+
+
+.site-header-image {
+    @include animation(fadein 2s ease-out backwards);
+    position: absolute;
+
+    @extend %site-header-section ;
+
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: $color__background-feature;
+    line-height: 0;
+
+    // margin-bottom: ms(4);
+
+    .section-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        // @include animation(fadein-images 1s ease-out backwards, image-pulse 15.0s ease-in-out infinite alternate);
+        @include transition (all, 0.5s, ease);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: block;
+
+        @media (min-height: $tamagochi) and (min-width: $tablet) {
+            opacity: 1;
+        }
+    }
+
+    .featured-image & {
+        background: $color__base-tint10;   
+        // height: $size__header-height-mobile * 10px;
+        // height: $size__header-height-mobile * 1rem;
+        // height: 70vh;
+        @include screenSize(tablet) {
+            // height: 100vh;
+        }
+
+        @include screenSize(desktop) {
+            height: 40vh;
+        }
+        // @include screenSize(atleast-wide) {
+            // height: 100vh;
+        // }
+    }
+
+    @media (min-height: $tamagochi) and (min-width: $phablet) {
+
+    }
+}

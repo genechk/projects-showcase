@@ -1,0 +1,144 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	position: relative;
+	vertical-align: middle;
+	min-height: $grid__big-gutter * 20px;
+	min-height: $grid__big-gutter * 2rem;
+
+	.site-main & {
+		margin: 0 0 $grid__big-gutter * 10px;
+		margin: 0 0 $grid__big-gutter * 1rem;
+		overflow: hidden;
+	}
+
+	// a {
+		font-size: ms(0);
+		text-transform: uppercase;
+		letter-spacing: ms(-10);
+	// }
+
+	.nav-previous {
+		float: left;
+		width: 40%;
+		.single-projects & {
+			position: absolute;
+			right: 0;
+			bottom: $grid__small-gutter * 10px;
+			top: $grid__small-gutter * 1rem;
+			text-align: right;
+			// margin-bottom: $grid__small-gutter * 10px;
+			// margin-bottom: $grid__small-gutter * 1rem;
+		}
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 40%;
+
+		.single-projects & {
+			position: absolute;
+			left: 0;
+			bottom: $grid__small-gutter * 1rem;
+			top: $grid__small-gutter * 1rem;
+			text-align: left;
+			// margin-bottom: $grid__small-gutter * 10px;
+			// margin-bottom: $grid__small-gutter * 1rem;
+		}
+	}
+
+}
+
+.single-projects .hentry {
+	margin-bottom: $grid__small-gutter * 10px;
+	margin-bottom: $grid__small-gutter * 1rem;
+}

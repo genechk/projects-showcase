@@ -1,0 +1,183 @@
+
+.page-template-custom-homepage {
+
+    %identics-mobile {
+        max-width: 100%;       
+    }
+
+
+    .sidebar-toggle {
+        @include animation(fadein 0.3s ease-out 2s backwards);
+    }
+    
+    .site-branding {
+
+        position: relative;
+        float: left;
+        margin: 0 auto;
+        padding: $grid__small-gutter * 10px;
+        padding: $grid__small-gutter * 1rem;
+        vertical-align: middle;
+        top: 0;
+        max-height: $size__header-hero-min-height-mobile;
+        overflow: hidden;
+
+        width: 80%;
+        color: #fff;
+        z-index: 50;
+        text-align: center;
+
+        @include transition(all 0.5s ease-in-out);
+
+        #logo {
+
+            @include animation(fadein 1.5s ease-out 0.3s backwards);
+            position:relative;
+            display: block;
+            float: left;
+            width: 16%;
+
+            min-width: 40px;
+            min-width: 4rem;
+            max-width: 80px;
+            max-width: 8rem;
+            text-align: left;
+            font-color: rgba($color__eyecandy, 0);
+            margin: 0 0 $grid__medium-gutter * 10px / 2;
+            margin: 0 0 $grid__medium-gutter * 1rem / 2;
+        }
+
+        a {
+
+        
+            // text-align: left;
+            // display: block;
+            max-width: auto;
+            display: inline;
+
+            h1, #logo {
+                opacity: 0.98;
+            }
+
+            &:hover h1, &:hover #logo {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            @include animation(fadein 1s ease-out 1s backwards);
+
+            display: block;
+            clear: both;
+            
+            width: 80%;
+            max-width: 140px;
+            max-width: 14rem;
+            height: 100%;
+            vertical-align: top;
+            text-align: left;
+
+            font-size: 24px;
+            font-size: ms(5);
+            margin: 0 0 $grid__small-gutter * 10px / 2;
+            margin: 0 0 $grid__small-gutter * 1rem / 2;
+
+            color: $color__headings-page-header;
+            a {
+                color: $color__headerlink;
+                text-decoration: none;
+                &:hover {
+                    color: $color__headerlink-hover;
+                }
+            }
+        }
+
+        h2 {
+            @include animation(fadein 1s ease-out 1s backwards);
+            
+            display: block;
+            
+            font-size: 15px;
+            font-size: ms(2);
+            text-align: left;
+            width: 80%;
+            max-width: 200px;
+            max-width: 20rem;
+            padding: 0;
+            margin: 0;
+            color: $color__headings-page-header;
+        }
+
+        @media (min-height: $tamagochi) and (min-width: $phablet) {
+
+            %identics-phablet {  
+                float: none;
+                text-align: center;
+                display: block;
+                max-width: none;
+            }
+
+              
+            float: none;
+            position: absolute;
+            width: 90%;
+            max-height: 100%;
+            margin: 0 auto;
+            padding: 0px;
+            top: 10%;
+            top: 26vh;
+            left: 2rem;
+            right: 2rem;
+            text-align: center;
+            max-height: 100vh;
+
+            #logo {
+                @extend %identics-phablet;
+                width: 240px;
+                width: 24rem;
+                width: 22vh;
+                max-width: 180px;
+                max-width: 18rem;
+                margin: 0 auto 26px;
+                margin: 0 auto 2.6rem;
+                margin: 0 auto 2.6vh;
+            }
+
+            h1 {
+                @extend %identics-phablet;
+                width: 100%;
+                font-size: 54px;
+                font-size: ms(9);
+                font-size: 9vh;
+                margin: 0 0 24px;
+                margin: 0 0 ms(5);
+                margin: 0 0 2.6vh;
+            }
+
+            h2 {
+                @extend %identics-phablet;
+                width: 100%;
+                font-size: 22px;
+                font-size: 2.2rem;
+                font-size: 3.2vh;
+                padding-top: 16px;
+                padding-top: 1.6rem;
+                padding-top: 1.6vh;
+                letter-spacing: ms(-13);
+            }
+        }
+
+        ::selection {/* WebKit/Blink Browsers */
+            background: rgba(white, 0.2); 
+            color: $color__eyecandy-tint90;
+            text-shadow: none;
+        }
+        ::-moz-selection { /* Gecko Browsers */
+            background: rgba(white, 0.2); 
+            color: $color__eyecandy-tint90;
+            text-shadow: none;
+        }
+
+    }
+
+}

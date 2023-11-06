@@ -1,0 +1,184 @@
+//
+// Colors
+//
+
+$color__base: #141428; //old: #141532
+
+$color__base-tint10: tint($color__base,10%);
+$color__base-tint15: tint($color__base,15%);
+$color__base-tint20: tint($color__base,20%);
+$color__base-tint30: tint($color__base,30%);
+$color__base-tint40: tint($color__base,40%);
+$color__base-tint60: tint($color__base,60%);
+$color__base-tint70: tint($color__base,70%);
+$color__base-tint80: tint($color__base,80%);
+$color__base-tint90: tint($color__base,90%);
+$color__base-tint95: tint($color__base,95%);
+
+$color__base-shade10: shade($color__base,10%);
+$color__base-shade20: shade($color__base,20%);
+
+
+$color__accent: #93959d;
+
+$color__accent-tint10: tint($color__accent,10%);
+$color__accent-tint20: tint($color__accent,20%);
+$color__accent-tint40: tint($color__accent,40%);
+$color__accent-tint60: tint($color__accent,60%);
+$color__accent-tint80: tint($color__accent,80%);
+$color__accent-tint90: tint($color__accent,90%);
+
+$color__accent-shade10: shade($color__accent,10%);
+$color__accent-shade20: shade($color__accent,20%);
+$color__accent-shade30: shade($color__accent,30%);
+$color__accent-shade40: shade($color__accent,40%);
+$color__accent-shade60: shade($color__accent,60%);
+$color__accent-shade70: shade($color__accent,70%);
+
+
+$color__eyecandy: #eb6e78;
+
+$color__eyecandy-tint10: tint($color__eyecandy,10%);
+$color__eyecandy-tint20: tint($color__eyecandy,20%);
+$color__eyecandy-tint40: tint($color__eyecandy,40%);
+$color__eyecandy-tint60: tint($color__eyecandy,60%);
+$color__eyecandy-tint80: tint($color__eyecandy,80%);
+$color__eyecandy-tint90: tint($color__eyecandy,90%);
+
+$color__eyecandy-shade10: shade($color__eyecandy,10%);
+$color__eyecandy-shade20: shade($color__eyecandy,20%);
+$color__eyecandy-shade30: shade($color__eyecandy,30%);
+$color__eyecandy-shade40: shade($color__eyecandy,40%);
+$color__eyecandy-shade60: shade($color__eyecandy,60%);
+$color__eyecandy-shade70: shade($color__eyecandy,70%);
+
+
+
+$color__active: #88a2aa; // #748EAF; // #4a89a8
+
+$color__active-tint10: tint($color__active,10%);
+$color__active-tint20: tint($color__active,20%);
+$color__active-tint40: tint($color__active,40%);
+$color__active-tint60: tint($color__active,60%);
+$color__active-tint80: tint($color__active,80%);
+$color__active-tint90: tint($color__active,90%);
+
+$color__active-shade10: shade($color__active,10%);
+$color__active-shade20: shade($color__active,20%);
+$color__active-shade30: shade($color__active,30%);
+$color__active-shade40: shade($color__active,40%);
+$color__active-shade60: shade($color__active,60%);
+$color__active-shade70: shade($color__active,70%);
+
+
+
+$color__subtle: #93959d;
+
+$color__subtle-tint10: tint($color__subtle,10%);
+$color__subtle-tint20: tint($color__subtle,20%);
+$color__subtle-tint40: tint($color__subtle,40%);
+$color__subtle-tint60: tint($color__subtle,60%);
+$color__subtle-tint80: tint($color__subtle,80%);
+$color__subtle-tint90: tint($color__subtle,90%);
+
+$color__subtle-shade10: shade($color__subtle,10%);
+$color__subtle-shade20: shade($color__subtle,20%);
+$color__subtle-shade30: shade($color__subtle,30%);
+$color__subtle-shade40: shade($color__subtle,40%);
+$color__subtle-shade60: shade($color__subtle,60%);
+$color__subtle-shade70: shade($color__subtle,70%);
+
+
+
+//
+// Color Applications
+//
+
+// Backgrounds
+
+$color__background-body: #fff;
+$color__background-screen: $color__base-tint95;
+$color__background-hr: $color__base-tint95;
+$color__background-pre: $color__base-tint95;
+$color__background-ins: #fff9c0;
+
+$color__background-header: $color__eyecandy;
+$color__background-archive-header: $color__base-tint40;
+$color__background-feature: $color__eyecandy;
+$color__background-drawer: $color__base-tint95;
+$color__background-footer: $color__base-tint95;
+$color__background-404: $color__accent;
+$color__background-table-header: rgba($color__base,.05);
+
+
+// Text
+
+$color__text-screen: $color__base;
+$color__text-input: $color__base-tint40;
+$color__text-input-focus: $color__base-tint20;
+
+$color__text-main: $color__base-tint40;
+
+$color__headings: $color__base-tint30;
+$color__headings-page-header: #fff;
+
+$color__text-soft: $color__base-tint60;
+$color__text-softer: $color__base-tint80;
+
+$color__text-sidebar: $color__base-tint40;
+$color__text-shadow-sidebar: $color__base-tint95;
+
+
+// Links
+
+$color__link: $color__active;
+$color__link-visited: $color__active;
+$color__link-hover: $color__eyecandy-tint20;
+
+$color__link-sidebar: $color__active-tint10;
+$color__link-sidebar-hover: $color__eyecandy;
+
+$color__titlelink: $color__active-tint10;
+$color__titlelink-hover: $color__eyecandy;
+
+$color__asidelink: $color__active-tint10;
+$color__asidelink-hover: $color__eyecandy;
+
+$color__headerlink: $color__base-tint10;
+$color__headerlink-hover: #fff;
+
+$color__headerlink-toggle-open: $color__base-tint60;
+$color__headerlink-toggle-open-hover: $color__eyecandy;
+
+$color__headernavlink: rgba(white,.7);
+$color__headernavlink-hover: #fff;
+
+$color__footerlink: $color__base-tint70;
+$color__footerlink-hover: $color__accent;
+
+
+// Forms
+
+$color__background-button: $color__eyecandy;
+$color__background-button-hover: $color__eyecandy-tint20;
+$color__background-button-focus: $color__eyecandy-shade10;
+
+$color__text-button: $color__eyecandy-tint90;
+$color__text-button-hover: #fff;
+$color__textshadow-button-hover: $color__eyecandy-shade20;
+
+$color__border-button: $color__eyecandy $color__eyecandy-shade10 $color__eyecandy-shade20;
+$color__border-button-hover: $color__eyecandy-tint20 $color__eyecandy-tint10 $color__eyecandy-shade10;
+$color__border-button-focus: $color__eyecandy-shade20 $color__eyecandy-shade20 $color__eyecandy-shade20;
+
+$color__outilne-button-focus: $color__eyecandy-tint60;
+$color__outilne-field-focus: $color__base-tint90;
+
+$color__border-input: $color__base-tint80;
+$color__border-abbr: $color__base-tint60;
+
+
+// Others
+$color__border-base: $color__base-tint95;
+$color__border-sidebar-navigation: $color__base-tint80;
+$color__border-table-row: rgba($color__base,.03);

@@ -1,0 +1,97 @@
+$animation-duration: 6000ms;
+
+
+.site-header {
+    .scroll-to-content {
+        display: none;
+        z-index: 50;
+
+        #arrow-down {
+
+            width:30px;
+            width:3rem;
+
+            
+            @include transition(all 0.5s ease-in-out);
+
+            @include screenSize(desktop) {
+                width:40px;
+                width:4rem;
+            }
+
+            @include animation(fadein 0.3s ease-out 2s backwards);
+        }
+
+
+        @media (min-height: $tamagochi) and (min-width: $phablet) {
+
+
+            position: absolute;
+            display: block;
+            left:2rem;
+            right:2rem;
+            bottom:4rem;
+            text-align: center;
+        
+
+            a {
+                .arrow-triangle,
+                .arrow-base{
+                    @include transition(all 0.5s ease-in-out);
+                }
+
+                &:hover .arrow-triangle,
+                &:hover .arrow-base{
+                    opacity: 0.8;  
+                } 
+            }
+
+            #arrow-down {
+                .arrow-triangle {
+                    animation: levitation $animation-duration ease-in-out infinite;
+                }
+                @keyframes levitation {
+                    000%,
+                    002% {
+                        transform: translateY(1rem);
+                    }
+                    005% {
+                        transform: translateY(1.1rem);
+                    }
+                    005%,
+                    010% {
+                        transform: translateY(0rem);
+                    }
+                    010%,
+                    015% {
+                        transform: translateY(1.2rem);
+                    }
+                    015%,
+                    020% {
+                        transform: translateY(0rem);
+                    }
+                    020%,
+                    025% {
+                        transform: translateY(1.2rem);
+                    }
+                    025%,
+                    030% {
+                        transform: translateY(0.8rem);
+                    }
+                    030%,
+                    035% {
+                        transform: translateY(1.1rem);
+                    }
+                    035%,
+                    040% {
+                        transform: translateY(1rem);
+                    }
+                    040%,
+                    100% {
+                        transform: translateY(1rem);
+                    }
+                }
+            }
+        }
+    }
+}

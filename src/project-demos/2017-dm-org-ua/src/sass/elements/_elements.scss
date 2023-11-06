@@ -1,0 +1,66 @@
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; 
+}
+/* (From Skeleton.css)
+NOTE 
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+
+::selection {/* WebKit/Blink Browsers */
+	background: $color__eyecandy-tint10; 
+	color: $color__eyecandy-tint90;
+	text-shadow: none;
+}
+::-moz-selection { /* Gecko Browsers */
+	background: $color__eyecandy-tint10;
+	color: $color__eyecandy-tint90;
+	text-shadow: none;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	font-size: 1.5em; /* (From Skeleton.css) currently ems cause chrome bug misinterpreting rems on body element */
+
+    min-width:$site__min-width * 10px;
+    min-width:$site__min-width * 1rem;
+}
+
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5rem;
+}
+
+@import "lists";
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1rem 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+@import "tables";
