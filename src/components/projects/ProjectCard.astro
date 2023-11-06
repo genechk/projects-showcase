@@ -9,6 +9,8 @@ import codeIconSvg from '@assets/icons/code-bracket.svg?raw'
 import cubeIconSvg from '@assets/icons/cube.svg?raw'
 import linkIconSvg from '@assets/icons/link.svg?raw'
 
+const baseURL = import.meta.env.BASE_URL
+
 export type Props = { project: CollectionEntry<'projects'> }
 const { project } = Astro.props
 const { slug } = project
@@ -60,7 +62,7 @@ const timespan = getProjectTimespan({ startDate, endDate })
       )
     }
   </div>
-  <a href={`/projects/${slug}`}>
+  <a href={`${baseURL}/projects/${slug}`}>
     <Image
       alt={title}
       class="m-0 h-auto w-full scale-100 transition duration-[1.5s] group-hover:scale-110"

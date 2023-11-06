@@ -21,6 +21,6 @@ delivered:
 startDate: 2022-02-27T07:00:00.000Z
 endDate: 2023-07-30T07:00:00.000Z
 codeSandboxURL: https://codesandbox.io/p/sandbox/appeals-crm-ui-forked-kqscsz?welcome=true&embed=1
-demoURL: /projects/demo/dopomoha-kharkiv-crm
+demoURL: /projects-showcase/projects/demo/dopomoha-kharkiv-crm
 tags: ['Node.js', 'Express', 'GrammY', 'Nuxt3', 'Vue3']
 ---

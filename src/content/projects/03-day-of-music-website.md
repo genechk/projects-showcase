@@ -17,7 +17,7 @@ endDate: 2017-07-30T00:00:00.000Z
 productionURL: https://web.archive.org/web/20201130053759/http://www.dm.org.ua/
 productionCaption: Using an archive since the website is no longer available
 githubURL: https://github.com/genechk/projects-showcase/tree/master/src/project-demos/2017-dm-org-ua
-demoURL: '/projects/demo/day-of-music-website'
+demoURL: '/projects-showcase/projects/demo/day-of-music-website'
 codeSandboxURL: ''
 tags: ['wordpress', 'jquery', 'slick', 'scss']
 ---

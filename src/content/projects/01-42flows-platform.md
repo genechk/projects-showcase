@@ -17,7 +17,7 @@ delivered:
   ]
 startDate: 2021-12-25T07:00:00.000Z
 endDate: 2022-05-31T07:00:00.000Z
-demoURL: '/projects/demo/gen-chat'
+demoURL: '/projects-showcase/projects/demo/gen-chat'
 codeSandboxURL: https://codesandbox.io/p/sandbox/gen-communication-platform-956vsc?file=%2FREADME.md%3A29%2C1&embed=1
 productDescriptionURL: https://www.42flows.tech/case-studies/leading-next-generation-universal-communication-platform-that-saves-money/
 productDescriptionCaption: Detailed description on employer’s website

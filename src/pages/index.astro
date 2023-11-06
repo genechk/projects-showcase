@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { Contacts, ProjectsShowcase, ProjectButton, SVGIcon } from '@components'
-import { cvDownload, cvOnline, title } from '@content/_data'
+import { cvDownload, cvDownloadName, cvOnline, title } from '@content/_data'
 
 // Images
 import clipIconSvg from '@assets/icons/paper-clip.svg?raw'
@@ -27,7 +27,7 @@ import photo from '@assets/photos/genechk.jpg'
         <ProjectButton
           href={cvDownload}
           isPrimary={true}
-          download
+          download={cvDownloadName}
         >
           <SVGIcon
             size="small"
