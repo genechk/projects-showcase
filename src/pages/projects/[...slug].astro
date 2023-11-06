@@ -1,0 +1,265 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { SVGIcon, Badge, Label, ProjectButton } from '@components'
+import { getProjectTimespan } from '@utils'
+import { getEntry, getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
+
+// Icons
+import codeIconSvg from '@assets/icons/code-bracket.svg?raw'
+import cubeIconSvg from '@assets/icons/cube.svg?raw'
+import linkIconSvg from '@assets/icons/link.svg?raw'
+import infoIconSvg from '@assets/icons/queue-list.svg?raw'
+
+// Set path params
+export async function getStaticPaths() {
+  const projectsCollection = await getCollection('projects')
+
+  return projectsCollection.map(project => ({ params: { slug: project.slug } }))
+}
+
+const { slug } = Astro.params
+if (!slug) throw new Error('Page doesn’t exist')
+
+const project = await getEntry('projects', slug)
+if (!project) throw new Error('Project doesn’t exist')
+
+const {
+  title,
+  image,
+  description,
+  employerName,
+  employerURL,
+  role,
+  goal,
+  delivered,
+  details,
+  codeSandboxURL,
+  githubURL,
+  productionURL,
+  productionCaption,
+  productDescriptionURL,
+  productDescriptionCaption,
+  demoURL,
+  demoCaption,
+  startDate,
+  endDate,
+  tags,
+} = project.data
+
+const timespan = getProjectTimespan({ startDate, endDate })
+---
+
+<Layout
+  title={title || 'Loading...'}
+  description={description}
+>
+  <div
+    class="flex flex-col items-center gap-2 bg-cover lg:h-[calc(100vh-3.25rem)] lg:flex-row lg:items-stretch lg:gap-0 lg:overflow-y-hidden"
+  >
+    <article
+      class:list={[
+        'prose prose-min prose-headings:mb-0 prose-headings:mt-1 prose-headings:leading-tight prose-p:m-0 prose-p:mb-3',
+        'grid grid-cols-[min-content_minmax(10rem,_1fr)] gap-x-3 gap-y-2 p-3',
+        'md:prose-lg md:gap-x-4 md:p-4 md:prose-headings:mt-2',
+        'lg:flex-grow lg:overflow-y-auto lg:overflow-x-hidden lg:px-8 lg:pb-10',
+        'lg:scrollbar-thin lg:scrollbar lg:scrollbar-thumb-slate-400 lg:scrollbar-track-slate-300',
+      ]}
+    >
+      <a
+        class="not-prose avatar row-span-2 self-start justify-self-end transition-opacity hover:opacity-90"
+        href={productionURL || demoURL || codeSandboxURL || githubURL}
+        target="_blank"
+      >
+        <div class="w-14 rotate-45 rounded-none md:w-20">
+          <Image
+            class="-rotate-45 select-none"
+            src={image}
+            alt={title}
+            width={320}
+            height={320}
+          />
+        </div>
+      </a>
+      <h1 class="self-center">
+        {title}
+      </h1>
+      <div
+        class="col-start-2 mb-1 flex flex-row flex-wrap items-baseline justify-between gap-x-3"
+      >
+        <p class="text-sm text-slate-500 md:text-base">
+          For {
+            employerURL ? (
+              <a
+                class="font-bold"
+                target="_blank"
+                href={employerURL}
+              >
+                {employerName}
+              </a>
+            ) : (
+              employerName
+            )
+          }
+        </p>
+        <div
+          class="tooltip col-start-2 text-slate-400"
+          data-tip={`${startDate.toLocaleDateString(
+            'en-UK',
+          )}–${endDate.toLocaleDateString('en-UK')}`}
+        >
+          <p
+            class="badge badge-neutral badge-sm whitespace-nowrap rounded-full sm:badge-lg"
+          >
+            {timespan}
+          </p>
+        </div>
+      </div>
+      <div class="not-prose col-start-2 mb-3 flex flex-row flex-wrap gap-3">
+        {
+          productionURL && (
+            <ProjectButton
+              href={productionURL}
+              isPrimary={true}
+              title={productionCaption}
+            >
+              <SVGIcon
+                size="xs"
+                src={linkIconSvg}
+              />
+              In production
+            </ProjectButton>
+          )
+        }
+        {
+          demoURL && (
+            <ProjectButton
+              class="group"
+              href={demoURL}
+              isPrimary={!productionURL}
+              title={demoCaption}
+            >
+              <SVGIcon src={cubeIconSvg} />
+              Demo
+            </ProjectButton>
+          )
+        }
+        {
+          githubURL && (
+            <ProjectButton
+              href={githubURL}
+              isPrimary={!productionURL && !demoURL}
+            >
+              <SVGIcon src={codeIconSvg} />
+              Source code
+            </ProjectButton>
+          )
+        }
+        {
+          productDescriptionURL && (
+            <ProjectButton
+              href={productDescriptionURL}
+              isPrimary={!productionURL && !demoURL && !githubURL}
+              title={productDescriptionCaption}
+            >
+              <SVGIcon src={infoIconSvg} />
+              Official description
+            </ProjectButton>
+          )
+        }
+      </div>
+      {
+        role && (
+          <>
+            <Label>Role:</Label>
+            <p class="col-start-2">{role}</p>
+          </>
+        )
+      }
+      {
+        goal && (
+          <>
+            <Label>Goal:</Label>
+            <p class="col-start-2">{goal}</p>
+          </>
+        )
+      }
+      {
+        delivered && delivered.length && (
+          <>
+            <Label>Delivered:</Label>
+            {delivered.length === 1 ? (
+              <p class="col-start-2">{delivered}</p>
+            ) : (
+              <div class="col-start-2">
+                {delivered.map(feature => (
+                  <div class="flex flex-row gap-x-3">
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox-primary checkbox checkbox-xs pointer-events-none mt-1.5 select-none md:mt-2"
+                    />
+                    <p class="mb-2">{feature}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        )
+      }
+      <div class="col-start-2 flex flex-wrap gap-2">
+        {tags.map(tag => <Badge variant="medium">{tag}</Badge>)}
+      </div>
+      {
+        details && (
+          <>
+            <Label>Details:</Label>
+            <p class="col-start-2">{details}</p>
+          </>
+        )
+      }
+    </article>
+    {
+      codeSandboxURL && (
+        <div class="w-full lg:flex-1">
+          <iframe
+            src={codeSandboxURL}
+            class="h-[600px] w-full overflow-hidden rounded-sm border-none bg-slate-100 lg:h-full"
+            title={title}
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+          />
+        </div>
+      )
+    }
+    {
+      demoURL && !codeSandboxURL && (
+        <div class="hidden pl-6 pt-4 lg:flex lg:flex-1">
+          <div class="mockup-browser w-auto max-w-none rounded-tl-lg border-none bg-slate-600 shadow-md  shadow-slate-400 lg:flex-1">
+            <div class="mockup-browser-toolbar ">
+              <div class="input rounded-md border border-base-300">
+                {demoURL}
+              </div>
+            </div>
+            <iframe
+              src={demoURL}
+              class="h-[600px]  w-full overflow-hidden rounded-sm border-none bg-slate-100 lg:h-full"
+              title={title}
+              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            />
+          </div>
+        </div>
+      )
+    }{
+      !codeSandboxURL && !demoURL && (
+        <div class="hidden w-full overflow-hidden lg:flex lg:flex-1">
+          <picture
+            class="h-full w-full flex-1 bg-cover"
+            style={`background-image: url('${image.src}')`}
+          />
+        </div>
+      )
+    }
+  </div>
+</Layout>
