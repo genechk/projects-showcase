@@ -13,6 +13,9 @@ I also used to do UI / UX Design, here’s my [old portfolio](https://behance.ne
 ## Contact Me
 
 _Email:_ [genek.tomashko@gmail.com](genek.tomashko@gmail.com)
+
 _Phone:_ [+38 098 677-46-20](tel:+380986774620)
+
 _Telegram:_ [genechk](https://t.me/gehecnk)
+
 _LinkedIn:_ [genechk](https://www.linkedin.com/in/genechk/)

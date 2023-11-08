@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro'
 import { SVGIcon, Badge, Label, ProjectButton } from '@components'
 import { getProjectTimespan } from '@utils'
 import { getEntry, getCollection } from 'astro:content'
+import { titleTemplate } from '@content/_data'
 import { Image } from 'astro:assets'
 
 // Icons
@@ -47,12 +48,13 @@ const {
   tags,
 } = project.data
 
+const pageTitle = !!title ? `${title} | ${titleTemplate}` : titleTemplate
 const timespan = getProjectTimespan({ startDate, endDate })
 ---
 
 <Layout
-  title={title || 'Loading...'}
   description={description}
+  title={pageTitle}
 >
   <div
     class="flex flex-col items-center gap-2 bg-cover lg:h-[calc(100vh-3.25rem)] lg:flex-row lg:items-stretch lg:gap-0 lg:overflow-y-hidden"
@@ -63,7 +65,7 @@ const timespan = getProjectTimespan({ startDate, endDate })
         'grid grid-cols-[min-content_minmax(10rem,_1fr)] gap-x-3 gap-y-2 p-3',
         'md:prose-lg md:gap-x-4 md:p-4 md:prose-headings:mt-2',
         'lg:flex-grow lg:overflow-y-auto lg:overflow-x-hidden lg:px-8 lg:pb-10',
-        'lg:scrollbar-thin lg:scrollbar lg:scrollbar-thumb-slate-400 lg:scrollbar-track-slate-300',
+        'lg:scrollbar lg:scrollbar-thin lg:scrollbar-track-slate-300 lg:scrollbar-thumb-slate-400',
       ]}
     >
       <a

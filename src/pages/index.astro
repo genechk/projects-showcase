@@ -1,16 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { ProjectsWrapper, ProjectsShowcase } from '../components'
+import { titleTemplate, descriptionTemplate } from '@content/_data'
 import { getCollection } from 'astro:content'
 
 const projectsCollection = await getCollection('projects')
 ---
 
-<Layout title="Projects">
+<Layout
+  description={descriptionTemplate}
+  title={titleTemplate}
+>
   <main class="flex flex-col gap-0">
-    <div class="prose prose-min px-4 pb-0 pt-4 prose-headings:m-0">
+    <header class="prose prose-min px-4 pb-0 pt-4 prose-headings:m-0">
       <ProjectsShowcase />
-    </div>
+    </header>
 
     <ProjectsWrapper projects={projectsCollection} />
   </main>

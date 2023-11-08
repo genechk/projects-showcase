@@ -9,11 +9,11 @@ role: Product owner, full-stack developer
 goal:
   To provide a convenient way for volunteers to access and edit from various devices the database of aid seekers.
 
-  Create an interactive visualization of requests geography and provide an easy way to group and process requests via neighbourhood.
+  Create an interactive visualization of appeals geography and provide an easy way to group and process appeals via neighbourhood.
 delivered:
   [
     'Developed a full-stack app that helps volunteers with trackng and processing incoming appeals for humanitarian aid',
-    'Developed the CRUD API for requests database access (Node.js + Express)',
+    'Developed the CRUD API for appeals database access (Node.js + Express)',
     'Developed and launched the Telegram chat-bot (Node.js + Grammy.js + Google Sheets API)',
     'Developed and launched CRM for web and mobile access',
     'Implemented custom authentication for volunteers via Google OAuth 2.0 and Passport',

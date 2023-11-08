@@ -35,14 +35,16 @@ const { menuItems, title, toggleId } = Astro.props
     </label>
   </div>
 
-  <div class="mx-2 flex-1 px-2">
+  <header class="mx-2 flex-1 px-2">
     <a
       class="text-xl font-light text-slate-500 hover:text-accent lg:text-2xl"
       href={`${baseURL}/`}
     >
-      {title}
+      <h2>
+        {title}
+      </h2>
     </a>
-  </div>
+  </header>
   <div class="hidden flex-none lg:block">
     <Menu
       id="nav-menu"
