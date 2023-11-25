@@ -3,7 +3,13 @@ import '@styles/fonts.css'
 import '@styles/styles.css'
 
 import { SEO } from 'astro-seo'
-import { TopMenuNav, type MenuItemData, SidebarMenu } from '../components'
+import {
+  AnalyticsScript,
+  HeapAnalytics,
+  TopMenuNav,
+  type MenuItemData,
+  SidebarMenu,
+} from '../components'
 
 type Props = {
   title: string
@@ -42,12 +48,15 @@ const toggleId = 'menu-toggle'
       description={description ||
         'Samples of my code, that aren’t public for various reasons (mostly NDA)'}
     />
+    <HeapAnalytics />
   </head>
 
   <body
     class="drawer"
     data-theme="min"
   >
+    <AnalyticsScript />
+
     <!-- See https://daisyui.com/components/drawer/ -->
     <input
       id={toggleId}

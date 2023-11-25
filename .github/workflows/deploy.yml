@@ -17,6 +17,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HEAP_ID: ${{ secrets.HEAP_ID }}
+      CONTAINER_ID: ${{ secrets.CONTAINER_ID }}
+      CONTAINER_URL: ${{ secrets.CONTAINER_URL }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
