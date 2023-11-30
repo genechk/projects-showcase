@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "description": "",
-  "main": "dist/main.js",
+  "main": "demo/main.js",
   "files": [
+    "./demo",
     "./dist",
     "./plugins",
     "./public",
