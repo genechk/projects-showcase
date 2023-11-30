@@ -1,0 +1,22 @@
+{
+  "name": "dm-org-ua",
+  "version": "1.0.0",
+  "description": "A single-page landing for local NGO made using Wordpress and Underscores based theme",
+  "typings": "./typings.d.ts",
+  "type": "module",
+  "devDependencies": {
+    "bourbon": "^7.3.0",
+    "modularscale-sass": "^3.0.10",
+    "node-sass": "^8.0.0",
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "build-css": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets/ wordpress/sass/style.scss wordpress/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "genechk",
+  "license": "GPL-2.0",
+  "files": [
+    "./html"
+  ]
+}

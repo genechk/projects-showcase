@@ -13,7 +13,6 @@
       "@components/*": ["src/components/*"],
       "@content/*": ["src/content/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@project-demos/*": ["src/project-demos/*"],
       "@styles/*": ["src/styles/*"],
       "@utils": ["src/utils"],
       "@utils/*": ["src/utils/*"]

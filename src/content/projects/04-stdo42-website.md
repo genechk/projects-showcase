@@ -17,7 +17,7 @@ delivered:
   ]
 startDate: 2017-05-13T00:00:00.000Z
 endDate: 2017-28-12T07:00:00.000Z
-githubURL: https://github.com/genechk/projects-showcase/tree/master/src/project-demos/2017-stdo42-com-ua
+githubURL: https://github.com/genechk/projects-showcase/tree/master/demos/2017-stdo42-com-ua
 productionURL: https://web.archive.org/web/20200924055554/http://www.stdo42.com/
 productionCaption: Using an archive since the website is no longer available
 tags: ['wordpress', 'jquery', 'scss']

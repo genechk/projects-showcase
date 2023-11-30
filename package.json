@@ -18,6 +18,7 @@
     "@types/react-dom": "^18.2.17",
     "astro": "^3.6.0",
     "astro-seo": "^0.7.6",
+    "dm-org-ua": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.5",
@@ -27,7 +28,7 @@
     "@astrojs/check": "^0.3.1",
     "@tailwindcss/typography": "^0.5.10",
     "@typescript-eslint/parser": "^6.12.0",
-    "bourbon": "^7.3.0",
+    "bumpp": "^9.2.0",
     "daisyui": "^3.9.4",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
@@ -37,9 +38,13 @@
     "prettier-plugin-astro": "^0.12.2",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.7",
-    "sass": "^1.69.5",
     "sharp": "^0.32.6",
+    "simple-git-hooks": "^2.9.0",
     "tailwind-scrollbar": "^3.0.5",
     "typescript": "^5.3.2"
+  },
+  "packageManager": "pnpm@8.11.0",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm bumpp"
   }
 }
