@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Remissis';
+    src:
+      local('Remissis'),
+      url(/fonts/remissis-semibold/RemissisSb-Regular.otf) format('opentype');
+  }
+
+  * {
+    @apply selection:p-2;
+    @apply selection:bg-black selection:bg-opacity-80 selection:text-white;
+  }
+
+  html,
+  #app {
+    @apply h-full;
+  }
+
+  body {
+    @apply font-sans;
+    @apply h-full min-h-full;
+  }
+
+  a,
+  .link-default {
+    @apply transition duration-300;
+    @apply text-stone-600;
+    @apply outline-0 focus:outline-0;
+    @apply ring-primary-500 ring-opacity-50;
+    @apply focus:text-primary-600;
+    @apply hover:text-primary-600;
+  }
+
+  p a,
+  .text-link-list a,
+  .link-text {
+    @apply text-slate-400;
+    @apply focus:text-primary-600;
+    @apply hover:text-primary-600;
+  }
+
+  button {
+    @apply outline-0 focus:outline-0;
+  }
+
+  .font-finlandica {
+    font-family: 'Finlandica', sans-serif;
+  }
+
+  .font-remissis {
+    font-family: 'Remissis', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-remissis;
+  }
+
+  input,
+  input[type='text'],
+  input[type='number'],
+  textarea,
+  textarea.form-input,
+  .form-input {
+    @apply rounded-md;
+    @apply transition-colors;
+    @apply border-stone-400;
+    @apply focus:border-amber-600 focus:ring-1 focus:ring-amber-400;
+
+    &:disabled {
+      @apply bg-neutral-200 text-neutral-700 opacity-70;
+    }
+  }
+
+  .form-input.rounded-left {
+    @apply rounded-l-md rounded-r-none border-r-0;
+  }
+
+  textarea {
+    min-height: 4rem;
+  }
+
+  input[type='number'] {
+    /* Reset */
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+@layer components {
+  .content-card {
+    @apply w-full max-w-3xl;
+    @apply mt-0 p-6 pb-12;
+    @apply sm:mt-4 sm:p-8;
+    @apply rounded-xl bg-white text-lg shadow-lg;
+  }
+}

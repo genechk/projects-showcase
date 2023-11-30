@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    /* Aliases */
+    "baseUrl": "src",
+    "paths": {
+      "@dkc/*": ["*"],
+      "@dkc:assets/*": ["assets/*"],
+      "@dkc:components/*": ["components/*"],
+      "@dkc:composables/*": ["composables/*"],
+      "@dkc:composables": ["composables"],
+      "@dkc:content/*": ["content/*"],
+      "@dkc:content": ["content"],
+      "@dkc:pages/*": ["pages/*"],
+      "@dkc:server/*": ["server/*"],
+      "@dkc:types": ["types"],
+      "@dkc:utils/*": ["utils/*"],
+      "@dkc:utils": ["utils"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

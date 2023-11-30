@@ -1,44 +1,49 @@
 ---
-const codeSandboxURL = 'https://kqscsz-5173.csb.app'
-const title = 'Humanitarian Aid Appeals CRM | Project demo by Genek Tomashko'
+import Assets from 'dopomoha-kharkiv-crm-ui/dist/Assets.astro'
+import { AnalyticsScript, HeapAnalytics } from '@components'
+
+const baseURL = import.meta.env.BASE_URL
 ---
 
-<head>
-  <meta charset="utf-8" />
-  <title>{title}</title>
-  <meta
-    name="description"
-    content=""
-  />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${baseURL}/favicon.svg`}
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Humanitarian Aid Appeals CRM | Demo by Genek Tomashko</title>
+    <script>
+      import 'dopomoha-kharkiv-crm-ui'
+    </script>
+    <Assets />
+    <HeapAnalytics />
+  </head>
+  <body>
+    <AnalyticsScript />
+    <div id="app"></div>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-</head>
+    <script>
+      import favicon from 'dopomoha-kharkiv-crm-ui/public/favicon.ico'
 
-<body>
-  <iframe
-    src={codeSandboxURL}
-    title={title}
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-  ></iframe>
-</body>
+      window.onload = () => {
+        let link = document.querySelector<HTMLLinkElement>("link[rel~='icon']")
 
-<style>
-  body {
-    background-color: rgb(241 245 249);
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
+        if (!link) {
+          link = document.createElement('link')
+          link.rel = 'icon'
+          document.head.appendChild(link)
+        }
 
-  iframe {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    border: 0;
-    overflow: hidden;
-  }
-</style>
+        link.href = favicon
+        link.type = 'image/ico'
+      }
+    </script>
+  </body>
+</html>

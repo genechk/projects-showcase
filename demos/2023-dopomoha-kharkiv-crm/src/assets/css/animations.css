@@ -1,0 +1,59 @@
+/** Source: https://projects.lukehaas.me/css-loaders/ */
+.loader,
+.loader:before,
+.loader:after {
+  @apply rounded-full w-1 h-1 md:w-1.5 md:h-1.5;
+
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load 1.8s infinite ease-in-out;
+  animation: load 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #ffffff;
+  font-size: 2px;
+  position: relative;
+  margin: 0;
+  margin-bottom: 0.7rem;
+  padding: 0;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0rem;
+}
+.loader:before {
+  @apply -left-2.5 md:-left-3;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  @apply left-2.5 md:left-3;
+}
+@-webkit-keyframes load {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0.4rem 0 -0.2rem;
+  }
+  40% {
+    box-shadow: 0 0.4rem 0 0;
+  }
+}
+@keyframes load {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0.4rem 0 -0.2rem;
+  }
+  40% {
+    box-shadow: 0 0.4rem 0 0;
+  }
+}

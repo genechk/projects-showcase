@@ -1,0 +1,5 @@
+export { default as AppealsNavigatorPage } from './AppealsNavigatorPage.vue'
+export { default as DashboardPage } from './DashboardPage.vue'
+export { default as HomePage } from './HomePage.vue'
+export { default as MapPage } from './MapPage.vue'
+export * from './router'
